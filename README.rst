@@ -14,7 +14,11 @@ Installation
 
 ::
 
-    pip install certbot-dns-dinahosting
+    pip install git+https://github.com/rdrgzlng/certbot-dns-dinahosting.git@master
+
+or::
+
+    pip3 install git+https://github.com/rdrgzlng/certbot-dns-dinahosting.git@master
 
 
 Named Arguments
@@ -112,7 +116,7 @@ create an empty directory with the following ``Dockerfile``:
 .. code-block:: docker
 
     FROM certbot/certbot
-    RUN pip install certbot-dns-dinahosting
+    RUN pip install git+https://github.com/rdrgzlng/certbot-dns-dinahosting.git@master
 
 Proceed to build the image::
 
