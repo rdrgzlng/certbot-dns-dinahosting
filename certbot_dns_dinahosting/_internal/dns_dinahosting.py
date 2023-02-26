@@ -6,33 +6,17 @@ import requests
 import base64
 import tldextract
 
-"""
-import zope.interface
-
-from certbot import errors
-from certbot import interfaces
-from certbot.plugins import dns_common
-"""
-import zope.interface
 
 from certbot import errors
 from certbot import interfaces
 from certbot.plugins import dns_common
 
-def try_registration(cls):
-    try:
-        interfaces.Authenticator.register(cls)
-    except AttributeError:
-        pass
-    return cls 
 
 logger = logging.getLogger(__name__)
 
+
 API_URL = "https://dinahosting.com/special/api.php"
 
-@try_registration
-@zope.interface.implementer(interfaces.IAuthenticator)
-@zope.interface.provider(interfaces.IPluginFactory)
 class Authenticator(dns_common.DNSAuthenticator):
     """
     DNS Authenticator for Dinahosting
