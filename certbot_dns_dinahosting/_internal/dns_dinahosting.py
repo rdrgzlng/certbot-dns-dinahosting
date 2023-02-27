@@ -6,7 +6,6 @@ import requests
 import base64
 import tldextract
 
-import zope.interface
 
 from certbot import errors
 from certbot import interfaces
@@ -18,9 +17,6 @@ logger = logging.getLogger(__name__)
 
 API_URL = "https://dinahosting.com/special/api.php"
 
-
-@zope.interface.implementer(interfaces.IAuthenticator)
-@zope.interface.provider(interfaces.IPluginFactory)
 class Authenticator(dns_common.DNSAuthenticator):
     """
     DNS Authenticator for Dinahosting
